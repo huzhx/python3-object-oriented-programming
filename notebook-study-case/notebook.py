@@ -52,6 +52,8 @@ class Notebook:
         note = self._find_note(note_id)
         if note:
             note.memo = memo
+            return True
+        return False
 
     def modify_tags(self, note_id, tags):
         ''' Find the note with given id and change its tags to the given value.
@@ -59,6 +61,8 @@ class Notebook:
         note = self._find_note(note_id)
         if note:
             note.tags = tags
+            return True
+        return False
 
     def search(self, filter):
         ''' Find all notes that match the given filter string.
